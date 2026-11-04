@@ -1,0 +1,87 @@
+
+### all cake list api
+
+GET http://127.0.0.1:8000/cake/
+# Authorization: Basic admin admin
+Authorization: : Token 5d9a564f2705cc11ed4cffeb00b327d8a6af589e
+
+### Create a cake
+POST http://127.0.0.1:8000/cake/
+# Authorization: Token 6a81a1409233577d57bf1697336efe2c31014acb
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzk0MDIzMDEwLCJpYXQiOjE3OTM1OTEwMTAsImp0aSI6ImM3YWI4MzVkYTYxODQyYzk5MDNmYTFkMjkzMDczZTc0IiwidXNlcl9pZCI6IjEifQ.ImxrtD4Aw2bqqugy4220lcw-dD-GP3DsGh3gb17UO7U
+Content-Type: multipart/form-data; boundary=abc
+# Authorization: Basic admin admin
+
+
+--abc
+Content-Disposition: form-data; name="name"
+
+Chocolate Cake
+--abc
+Content-Disposition: form-data; name="description"
+
+Rich chocolate cake
+--abc
+Content-Disposition: form-data; name="photo"; filename="image.jpg"
+Content-Type: image/jpeg
+
+< ./image.jpg
+--abc
+Content-Disposition: form-data; name="category"
+
+1
+--abc
+Content-Disposition: form-data; name="shape"
+
+2
+--abc
+Content-Disposition: form-data; name="weight"
+
+1
+--abc
+Content-Disposition: form-data; name="price"
+
+1200
+--abc--  
+
+GET http://127.0.0.1:8000/cake/1/
+
+
+### updating a cake
+PATCH  http://127.0.0.1:8000/cake/1/
+Content-Type: multipart/form-data; boundary=abc
+
+--abc
+Content-Disposition: form-data; name="name"
+
+Chocolate vancho Cake
+--abc--
+
+### deleting cake
+
+DELETE   http://127.0.0.1:8000/cake/1/
+
+### login api
+POST    http://127.0.0.1:8000/login/
+Content-Type: application/json
+
+{
+    "username":"admin",
+    "password":"admin"
+}
+
+
+
+### Create a cake
+POST http://127.0.0.1:8000/register/
+Content-Type: application/json
+
+{
+    "username":"jacob134@mailinator.com",
+
+    "first_name":"jacob duffy",
+
+    "role":"USER",
+
+    "password":"Kashi123"
+}

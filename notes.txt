@@ -1,0 +1,26 @@
+authentication.py (permission)
+
+class BasicAunthentication   (user_name,password)
+
+class SessionAuthentication  (web browsers,only(django(session key keeps us logged in)))
+
+class TokenAuthentication  (based on token ,passing tokens to figureout the user)
+
+
+permission.py-----
+
+class IsAuthenticated
+
+class IsAdminUser
+
+class AllowAny
+
+class IsAuthenticatedOrReadOnly    
+
+
+
+
+
+threading
+
+
